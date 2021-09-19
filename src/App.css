@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body {
+  background-image: linear-gradient( 109.6deg,  rgba(204,228,247,1) 11.2%, rgba(237,246,250,1) 100.2% );
+  font-family: 'Urbanist', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo-input {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.todo-input input {
+  max-width: 400px;
+  width: 400px;
+  padding: 20px;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  transition: 0.2s all ease;
+}
+
+.todo-input input:focus {
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+}
+
+.todo-input input::placeholder {
+  color: lightgray;
+}
+
+.todo-input button {
+  border: 2px;
+  border-color: white;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 0 0 0 0;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input button:active {
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-list {
+  max-width: 400px;
+  width: 400px;
+}
+
+.todo-list li {
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.todo-list li.completed-todo {
+  text-decoration: line-through;
+  color: lightslategray;
+}
+
+.todo-list span {
+  float: right;
+  opacity: 0;
+  transition: 0.3s all ease;
+}
+
+.todo-list li.completed-todo span{
+  color: black;
+  opacity: 1;
 }
